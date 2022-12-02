@@ -4,14 +4,17 @@ fn main() {
     day1()
 }
 
-fn day1() {
+fn read_input_lines(inputFile: &str) -> std::str::Split<char> {
     let contents = fs::read_to_string("input1.txt")
         .expect("Should have been able to read the file");
+    return contents.split('\n')
+}
 
+fn day1() {
     let mut calories = Vec::new();
     let mut curr_calories: u32 = 0;
 
-    for line in contents.split('\n') {
+    for line in read_input_lines("input1.txt") {
         if line.is_empty() {
             calories.push(curr_calories);
             curr_calories = 0;
@@ -29,4 +32,8 @@ fn day1() {
     let third = calories.pop().unwrap();
     let total = first + second + third;
     println!("max is {total}")
+}
+
+fn day2() {
+
 }
