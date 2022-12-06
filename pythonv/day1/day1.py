@@ -1,4 +1,4 @@
-with open("input1.txt", "r") as f:
+with open("day1/input.txt", "r") as f:
     calories = []
     curr_cals = 0
     for row in f.readlines():

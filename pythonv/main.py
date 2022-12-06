@@ -47,7 +47,12 @@ if (part == 1 and not hasattr(day_module, 'part1')) or (part == 2 and not hasatt
     print(f'unable to find expected part {part} in day{day}')
     exit()
 
+def run():
+    if part == 1:
+        day_module.part1(input)
+    if part == 2:
+        day_module.part2(input)
+
 with open(input_path, 'r') as f:
     input = f.read().split('\n')
-    print('not executing')
-    exit()
+    run()
